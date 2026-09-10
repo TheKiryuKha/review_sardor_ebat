@@ -33,6 +33,7 @@ final readonly class StripePaymentGateway implements PaymentGatewayInterface
         $rawMessage = $response->json('error.message');
         $errorMessage = is_string($rawMessage) ? $rawMessage : 'Payment failed';
 
+        // э пачему так криво
 return new PaymentResult(
     success: false,
     errorMessage: $errorMessage,

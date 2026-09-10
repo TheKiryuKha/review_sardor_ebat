@@ -6,6 +6,7 @@ namespace App\Contracts;
 
 use App\DTO\PaymentResult;
 
+// БЛЯЯЯЯЯЯЯ ИНТЕРФЕЙСЫ, какой же секс >~<
 interface PaymentGatewayInterface
 {
     public function charge(float $amount, string $currency): PaymentResult;

@@ -6,8 +6,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+// прекрасный просто request класс; великолепно
 final class ProcessPaymentRequest extends FormRequest
 {
+    // возможно дело вкуса, но если authorize возвращает true, его можно просто удалить
+    // это будет работать
+    //
+    // не замечание, просто выебываюсь
     public function authorize(): bool
     {
         return true;

@@ -13,6 +13,7 @@ final class PaypalPaymentGatewayTest extends TestCase
 {
     public function test_charge_succeeds_with_string_amount_and_json(): void
     {
+        // again, http запросы можно было вынести в отдельный класс с интерфейсом и мокать его в тестах
         Http::fake([
             'https://api.sandbox.paypal.com/v2/checkout/orders' => Http::response([
                 'id' => 'PAYPAL_ORDER_123',

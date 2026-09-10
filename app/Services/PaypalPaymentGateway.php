@@ -8,6 +8,7 @@ use App\Contracts\PaymentGatewayInterface;
 use App\DTO\PaymentResult;
 use Illuminate\Support\Facades\Http;
 
+// охуенный класс; не добавить не убавить
 final readonly class PaypalPaymentGateway implements PaymentGatewayInterface
 {
     public function __construct(

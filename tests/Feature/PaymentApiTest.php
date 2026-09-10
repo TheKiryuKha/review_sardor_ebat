@@ -10,6 +10,7 @@ use App\Services\PaymentGatewayResolver;
 use Mockery;
 use Tests\TestCase;
 
+// ТЕСТЫ ПРОСТО КРАСАВЧИК
 final class PaymentApiTest extends TestCase
 {
     public function testProcessPaymentSuccess(): void
@@ -24,6 +25,7 @@ final class PaymentApiTest extends TestCase
                 errorMessage: null,
             ));
 
+        // можно было вынести отдельным классом http запросы к api. Тогда бы можно было мокнуть только его
         $resolverMock = Mockery::mock(PaymentGatewayResolver::class);
         $resolverMock->shouldReceive('resolve')
             ->once()

@@ -10,10 +10,13 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    // найс, провайдеры юзаешь, чтобы с di работать. Красавчик
     public function register(): void
     {
         $this->app->bind(StripePaymentGateway::class, function (): StripePaymentGateway {
-
+            
+            // в config.php конфигурации для этой штуки нету
+            // она всегда будет null
             $stripeKey = (string) config('services.stripe.secret');
 
             return new StripePaymentGateway($stripeKey);
@@ -21,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(PaypalPaymentGateway::class, function (): PaypalPaymentGateway {
 
+            // same here
             $paypalKey = (string) config('services.paypal.secret');
 
             return new PaypalPaymentGateway($paypalKey);

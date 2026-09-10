@@ -7,6 +7,8 @@ namespace App\Services;
 use App\Contracts\PaymentGatewayInterface;
 use InvalidArgumentException;
 
+// nit: final readonly
+// nit: PaymentGatewayFactory, хотя resolver тоже норм. Дело вкуса короче
 class PaymentGatewayResolver
 {
     public function resolve(string $gatewayName): PaymentGatewayInterface
